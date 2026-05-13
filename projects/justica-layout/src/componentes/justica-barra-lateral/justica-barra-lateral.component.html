@@ -1,0 +1,27 @@
+<aside class="justica-barra-lateral" [class.justica-barra-lateral--fechada]="!aberta()">
+  @if (aberta()) {
+    <section class="justica-barra-lateral__conteudo">
+      @if (usuario(); as dadosUsuario) {
+        <div class="justica-barra-lateral__perfil" [style.--justica-imagem-perfil]="imagemFundo()">
+          <p class="justica-barra-lateral__perfil-linha">
+            {{ dadosUsuario.local || 'Local institucional' }}
+          </p>
+
+          <p class="justica-barra-lateral__perfil-linha justica-barra-lateral__perfil-linha--destaque">
+            {{ dadosUsuario.descricaoLocal || dadosUsuario.nome || 'Contexto institucional' }}
+          </p>
+
+          <a href="#" class="justica-barra-lateral__trocar-local">Trocar Local</a>
+        </div>
+      } @else {
+        <div class="justica-barra-lateral__perfil" [style.--justica-imagem-perfil]="imagemFundo()">
+          <p class="justica-barra-lateral__perfil-linha">Local institucional</p>
+          <p class="justica-barra-lateral__perfil-linha justica-barra-lateral__perfil-linha--destaque">
+            Contexto institucional
+          </p>
+          <a href="#" class="justica-barra-lateral__trocar-local">Trocar Local</a>
+        </div>
+      }
+    </section>
+  }
+</aside>

@@ -1,0 +1,26 @@
+<nav
+  class="justica-menu"
+  aria-label="Menu institucional"
+  justicaCliqueFora
+  (cliqueFora)="estadoMenu.fecharTudo()">
+  <ul class="justica-menu__lista" role="menubar">
+    @for (item of menu(); track item.id) {
+      <li class="justica-menu__item" [class.justica-menu__item--aberto]="estadoMenu.estaAberto(item.id)">
+        <justica-menu-item
+          [item]="item"
+          [ativo]="estadoMenu.estaAberto(item.id)"
+          [expandido]="estadoMenu.estaAberto(item.id)"
+          orientacao="horizontal"
+          (acionar)="selecionarItem($event)"></justica-menu-item>
+
+        @if (item.filhos?.length && estadoMenu.estaAberto(item.id)) {
+          <justica-submenu
+            [itens]="item.filhos ?? []"
+            [nivel]="0"
+            (itemSelecionado)="itemSelecionado.emit($event)"
+            (fechar)="estadoMenu.fecharTudo()"></justica-submenu>
+        }
+      </li>
+    }
+  </ul>
+</nav>

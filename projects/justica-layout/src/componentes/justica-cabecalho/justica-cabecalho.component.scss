@@ -1,0 +1,200 @@
+﻿@use '../../shared/estilos/tipografia' as tipografia;
+@use '../../shared/estilos/mixins' as mixins;
+
+.justica-cabecalho {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--justica-altura-barra-superior);
+  color: var(--justica-cor-texto-claro);
+  background-color: #1b5972;
+  box-shadow:
+    0 1px 10px rgba(0, 0, 0, 0.12),
+    0 4px 5px rgba(0, 0, 0, 0.14),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.justica-cabecalho__marca-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: var(--justica-largura-barra-lateral);
+  min-width: var(--justica-largura-barra-lateral);
+  height: var(--justica-altura-barra-superior);
+  background-color: #004164;
+}
+
+.justica-cabecalho__conteudo {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1.85rem 0 1.95rem;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.justica-cabecalho__marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.justica-cabecalho__logo {
+  width: 10rem;
+  max-width: calc(var(--justica-largura-barra-lateral) - 1rem);
+  height: 1.875rem;
+  object-fit: contain;
+}
+
+.justica-cabecalho__botao-menu {
+  @include mixins.justica-reset-botao;
+
+  position: absolute;
+  top: 50%;
+  right: -17.5px;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  margin-top: -17.5px;
+  line-height: 0;
+  padding: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #427591;
+  cursor: pointer;
+  will-change: transform;
+  transition:
+    background 240ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover,
+  &:focus-visible {
+    background: #427591;
+    outline: none;
+  }
+}
+
+.justica-cabecalho__botao-menu--aberto {
+  transform: rotate(180deg);
+}
+
+.justica-cabecalho__icone-seta {
+  width: 1.1rem;
+  height: 1.1rem;
+  stroke-width: 2.75;
+}
+
+.justica-cabecalho__acoes-inicio,
+.justica-cabecalho__acoes-fim {
+  display: flex;
+  align-items: center;
+}
+
+.justica-cabecalho__acoes-fim {
+  gap: 0.55rem;
+}
+
+.justica-cabecalho__titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  min-width: 0;
+
+  strong {
+    @include tipografia.justica-titulo-sistema;
+
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  span {
+    @include tipografia.justica-texto-menor;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+.justica-cabecalho__acoes-fim {
+  :where([acoes-cabecalho]) {
+    display: contents;
+  }
+}
+
+.justica-cabecalho__relogio {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.justica-cabecalho__botao-acao {
+  @include mixins.justica-reset-botao;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+  }
+
+  :where(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+    stroke-width: 2.25;
+  }
+}
+
+@media (max-width: 900px) {
+  .justica-cabecalho {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .justica-cabecalho__marca-bloco {
+    width: 100%;
+    min-width: 100%;
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+
+  .justica-cabecalho__conteudo {
+    padding: 0.5rem 1rem 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .justica-cabecalho__botao-menu {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+
+

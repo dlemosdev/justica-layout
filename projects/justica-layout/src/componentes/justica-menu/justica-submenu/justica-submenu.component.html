@@ -1,0 +1,48 @@
+﻿<div
+  class="justica-submenu"
+  justicaCliqueFora
+  role="menu"
+  [attr.data-nivel]="nivel()"
+  (cliqueFora)="solicitarFechamento()">
+  <ng-container
+    [ngTemplateOutlet]="listaRecursivaRef"
+    [ngTemplateOutletContext]="{ $implicit: itens(), nivelAtual: nivel(), caminhoAtual: caminhoInicial() }"></ng-container>
+</div>
+
+<ng-template #listaRecursiva let-itensLista let-nivelAtual="nivelAtual" let-caminhoAtual="caminhoAtual">
+  <ul class="justica-submenu__lista">
+    @for (item of itensLista; track item.id) {
+      <li class="justica-submenu__item" [class.justica-submenu__item--aberto]="estaAberto(item.id)">
+        <button
+          type="button"
+          class="justica-submenu__botao"
+          role="menuitem"
+          [disabled]="item.desabilitado"
+          [attr.aria-haspopup]="item.filhos?.length ? 'menu' : null"
+          [attr.aria-expanded]="item.filhos?.length ? estaAberto(item.id) : null"
+          [attr.aria-label]="item.rotuloAria || item.rotulo"
+          (click)="selecionar(item, caminhoAtual)">
+          <span class="justica-submenu__conteudo-item">
+            @if (item.icone) {
+              <fa-icon class="justica-submenu__icone-item" [icon]="item.icone!" aria-hidden="true"></fa-icon>
+            }
+            <span>{{ item.rotulo }}</span>
+          </span>
+          @if (item.filhos?.length) {
+            <fa-icon [icon]="iconeSubmenu" aria-hidden="true"></fa-icon>
+          }
+        </button>
+
+        @if (item.filhos?.length) {
+          <div class="justica-submenu__subpainel">
+            <ng-container
+              [ngTemplateOutlet]="listaRecursivaRef"
+              [ngTemplateOutletContext]="{ $implicit: item.filhos, nivelAtual: nivelAtual + 1, caminhoAtual: proximoCaminho(caminhoAtual, item.id) }"></ng-container>
+          </div>
+        }
+      </li>
+    }
+  </ul>
+</ng-template>
+
+

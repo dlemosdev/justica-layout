@@ -1,0 +1,60 @@
+.justica-menu {
+  --justica-altura-menu-compacta: calc(var(--justica-altura-menu));
+  --menuitem-text-color: #000000de;
+  --root-menuitem-text-color: #000000de;
+
+  position: relative;
+  box-sizing: border-box;
+  height: var(--justica-altura-menu-compacta);
+  padding: 0;
+  background: var(--menu-bg, #fdfeff);
+  border: 1px solid #e5e5e5;
+  border-top: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.justica-menu__lista {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: 0 none;
+}
+
+.justica-menu__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 0 0 auto;
+  z-index: 0;
+}
+
+.justica-menu__item--aberto::after {
+  display: none;
+}
+
+.justica-menu__item--aberto {
+  z-index: 2;
+}
+
+@media (max-width: 1400px) {
+  .justica-menu {
+    height: auto;
+    min-height: var(--justica-altura-menu-compacta);
+  }
+
+  .justica-menu__lista {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: calc(var(--justica-altura-menu-compacta) - 1px);
+  }
+
+  .justica-menu__item {
+    height: calc(var(--justica-altura-menu-compacta) - 1px);
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/justica-layout",
+  "assets": [
+    "src/shared/estilos"
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}

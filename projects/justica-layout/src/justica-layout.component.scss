@@ -1,0 +1,31 @@
+﻿@use 'shared/estilos/tokens';
+
+:host {
+  display: block;
+  color: var(--justica-cor-texto);
+  background: var(--justica-cor-conteudo);
+}
+
+.justica-layout {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 100vh;
+  background: var(--justica-cor-conteudo);
+}
+
+.justica-layout__corpo {
+  position: relative;
+  display: block;
+  min-height: 0;
+}
+
+.justica-layout__conteudo {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 1.5rem;
+  background: var(--justica-cor-conteudo);
+}
+
+

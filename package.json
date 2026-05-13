@@ -1,0 +1,40 @@
+{
+  "name": "justica-layout-workspace",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "start:dev": "node ./scripts/dev-demo.mjs",
+    "serve:demonstracao": "ng serve justica-demonstracao",
+    "build": "npm run build:lib",
+    "build:lib": "ng build justica-layout",
+    "watch:justica-layout": "ng build justica-layout --watch --configuration development",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "deploy:snapshot": "npm run build:lib && npm publish ./dist/justica-layout --registry=https://nexus.stj.jus.br/repository/npm-snapshot/",
+    "deploy:release": "npm run build:lib && npm publish ./dist/justica-layout --registry=https://nexus.stj.jus.br/repository/npm-release/"
+  },
+  "private": true,
+  "packageManager": "npm@11.12.1",
+  "dependencies": {
+    "@angular/common": "^17.3.12",
+    "@angular/compiler": "^17.3.12",
+    "@angular/core": "^17.3.12",
+    "@angular/forms": "^17.3.12",
+    "@angular/platform-browser": "^17.3.12",
+    "@angular/router": "^17.3.12",
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/pro-solid-svg-icons": "^6.7.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.17",
+    "@angular/cli": "^17.3.12",
+    "@angular/compiler-cli": "^17.3.12",
+    "ng-packagr": "^17.3.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.4.5"
+  }
+}

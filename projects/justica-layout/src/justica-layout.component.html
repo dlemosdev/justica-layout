@@ -1,0 +1,27 @@
+﻿<section
+  class="justica-layout"
+  [style.--justica-largura-barra-lateral]="larguraBarraLateralCss()"
+  [style.--justica-altura-barra-superior]="alturaBarraSuperiorCss()"
+  [style.--justica-altura-menu]="alturaMenuCss()">
+  <justica-cabecalho
+    [titulo]="titulo()"
+    [versao]="versao()"
+    [barraLateralAberta]="estadoLayout.barraLateralAberta()"
+    (alternarBarraLateral)="estadoLayout.alternarBarraLateral()">
+    <ng-content select="[acoes-cabecalho]"></ng-content>
+  </justica-cabecalho>
+
+  <justica-menu [menu]="menu()"></justica-menu>
+
+  <div class="justica-layout__corpo">
+    <justica-barra-lateral
+      [usuario]="usuario()"
+      [aberta]="estadoLayout.barraLateralAberta()"></justica-barra-lateral>
+
+    <main class="justica-layout__conteudo">
+      <ng-content></ng-content>
+    </main>
+  </div>
+</section>
+
+

@@ -1,0 +1,53 @@
+﻿<header class="justica-cabecalho" role="banner">
+  <div class="justica-cabecalho__marca-bloco">
+    <div class="justica-cabecalho__marca">
+      <img [src]="logo()" alt="Logo institucional" class="justica-cabecalho__logo" />
+    </div>
+
+    <button
+      type="button"
+      class="justica-cabecalho__botao-menu"
+      [class.justica-cabecalho__botao-menu--aberto]="barraLateralAberta()"
+      aria-label="Alternar barra lateral"
+      (click)="emitirAlternanciaBarraLateral()">
+      <fa-icon class="justica-cabecalho__icone-seta" [icon]="iconeAlternarMenu" aria-hidden="true"></fa-icon>
+    </button>
+  </div>
+
+  <div class="justica-cabecalho__conteudo">
+    <div class="justica-cabecalho__acoes-inicio">
+      <div class="justica-cabecalho__titulo">
+        <strong>{{ titulo() }}</strong>
+        @if (versao()) {
+          <span>{{ versao() }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="justica-cabecalho__acoes-fim">
+      <span class="justica-cabecalho__relogio">{{ relogioCabecalho() }}</span>
+      <ng-content></ng-content>
+      <button
+        type="button"
+        class="justica-cabecalho__botao-acao"
+        aria-label="Notificacoes"
+        (click)="emitirAcaoCabecalho('notificacoes')">
+        <fa-icon [icon]="iconeNotificacoes" aria-hidden="true"></fa-icon>
+      </button>
+      <button
+        type="button"
+        class="justica-cabecalho__botao-acao"
+        aria-label="Alertas"
+        (click)="emitirAcaoCabecalho('alertas')">
+        <fa-icon [icon]="iconeAlertas" aria-hidden="true"></fa-icon>
+      </button>
+      <button
+        type="button"
+        class="justica-cabecalho__botao-acao"
+        aria-label="Sair"
+        (click)="emitirAcaoCabecalho('sair')">
+        <fa-icon [icon]="iconeSair" aria-hidden="true"></fa-icon>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,73 @@
+﻿@if (item().rota) {
+  <a
+    class="justica-menu-item"
+    [class.justica-menu-item--ativo]="ativo()"
+    [class.justica-menu-item--horizontal]="orientacao() === 'horizontal'"
+    [class.justica-menu-item--vertical]="orientacao() === 'vertical'"
+    [class.justica-menu-item--submenu]="possuiFilhos()"
+    [class.justica-menu-item--desabilitado]="item().desabilitado"
+    [routerLink]="item().rota"
+    [attr.aria-disabled]="item().desabilitado || null"
+    [attr.aria-expanded]="possuiFilhos() ? expandido() : null"
+    [attr.data-testid]="item().identificadorTeste || null"
+    (click)="emitirAcao()"
+    (mouseenter)="emitirApontamento()">
+    @if (item().icone) {
+      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+    }
+    <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
+    @if (possuiFilhos()) {
+      <span class="justica-menu-item__seta" aria-hidden="true"></span>
+    }
+  </a>
+} @else if (item().urlExterna) {
+  <a
+    class="justica-menu-item"
+    [class.justica-menu-item--ativo]="ativo()"
+    [class.justica-menu-item--horizontal]="orientacao() === 'horizontal'"
+    [class.justica-menu-item--vertical]="orientacao() === 'vertical'"
+    [class.justica-menu-item--submenu]="possuiFilhos()"
+    [class.justica-menu-item--desabilitado]="item().desabilitado"
+    [href]="item().urlExterna"
+    target="_blank"
+    rel="noreferrer"
+    [attr.aria-disabled]="item().desabilitado || null"
+    [attr.aria-expanded]="possuiFilhos() ? expandido() : null"
+    [attr.data-testid]="item().identificadorTeste || null"
+    (click)="emitirAcao()"
+    (mouseenter)="emitirApontamento()">
+    @if (item().icone) {
+      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+    }
+    <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
+    @if (possuiFilhos()) {
+      <span class="justica-menu-item__seta" aria-hidden="true"></span>
+    }
+  </a>
+} @else {
+  <button
+    type="button"
+    class="justica-menu-item"
+    [class.justica-menu-item--ativo]="ativo()"
+    [class.justica-menu-item--horizontal]="orientacao() === 'horizontal'"
+    [class.justica-menu-item--vertical]="orientacao() === 'vertical'"
+    [class.justica-menu-item--submenu]="possuiFilhos()"
+    [class.justica-menu-item--desabilitado]="item().desabilitado"
+    [disabled]="item().desabilitado"
+    [attr.aria-expanded]="possuiFilhos() ? expandido() : null"
+    [attr.data-testid]="item().identificadorTeste || null"
+    (click)="emitirAcao()"
+    (mouseenter)="emitirApontamento()">
+    @if (item().icone) {
+      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+    }
+    <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
+    @if (possuiFilhos()) {
+      <span class="justica-menu-item__seta" aria-hidden="true"></span>
+    }
+  </button>
+}
+
+
+
+

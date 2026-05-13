@@ -1,0 +1,102 @@
+﻿.justica-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 40;
+  min-width: 11.5rem;
+  margin: 0;
+  padding: 0.25rem 0;
+  background: var(--surface-overlay, #ffffff);
+  border: 0;
+  border-radius: 4px;
+  box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.justica-submenu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.justica-submenu__item {
+  position: relative;
+}
+
+.justica-submenu__botao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 35px;
+  height: 35px;
+  padding: 0 0.625rem;
+  color: var(--menuitem-text-color, #515c66);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+
+  &:hover,
+  &:focus-visible {
+    color: #212121;
+    background: #d9d8d9;
+    outline: none;
+  }
+}
+
+.justica-submenu__conteudo-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.justica-submenu__icone-item {
+  width: 0.8rem;
+  height: 0.8rem;
+  min-width: 0.8rem;
+  color: var(--root-menuitem-text-color, #657380);
+  stroke-width: 2.25;
+}
+
+.justica-submenu__botao > svg:last-child {
+  width: 0.8rem;
+  height: 0.8rem;
+  stroke-width: 2.25;
+  margin-left: 0.35rem;
+}
+
+.justica-submenu__subpainel {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 11.5rem;
+}
+
+.justica-submenu__item--aberto > .justica-submenu__subpainel {
+  display: block;
+}
+
+.justica-submenu__subpainel > .justica-submenu__lista,
+.justica-submenu__subpainel .justica-submenu__lista:first-child {
+  margin: 0;
+  padding: 0.25rem 0;
+  border: 0;
+  border-radius: 4px;
+  background: #ffffff;
+  background: var(--surface-overlay, #ffffff);
+  box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
