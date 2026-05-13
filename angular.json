@@ -66,6 +66,9 @@
               "projects/justica-demonstracao/src/assets"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-pro/css/fontawesome.css",
+              "node_modules/@fortawesome/fontawesome-pro/css/regular.css",
+              "node_modules/@fortawesome/fontawesome-pro/css/solid.css",
               "projects/justica-demonstracao/src/styles.scss"
             ],
             "scripts": []

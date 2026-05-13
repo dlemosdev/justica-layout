@@ -1,13 +1,29 @@
 {
-  "name": "justica-layout",
-  "version": "17.100.0",
+  "name": "@justica/justica-layout",
+  "version": "17.100.5-SNAPSHOT",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0",
-    "@angular/router": "^17.3.0"
+    "@angular/router": "^17.3.0",
+    "@fortawesome/fontawesome-pro": "^7.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "style": "styles.css",
+  "exports": {
+    ".": {
+      "sass": "./src/styles.scss",
+      "style": "./styles.css"
+    },
+    "./styles.css": {
+      "style": "./styles.css",
+      "default": "./styles.css"
+    },
+    "./styles.scss": {
+      "sass": "./src/styles.scss",
+      "default": "./src/styles.scss"
+    }
   },
   "sideEffects": false
 }

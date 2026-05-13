@@ -40,7 +40,7 @@
   border-radius: 0;
   text-align: left;
   cursor: pointer;
-  font-size: 12px;
+  font-size: .90rem;
   font-weight: 500;
   line-height: 1;
 
@@ -55,23 +55,31 @@
 .justica-submenu__conteudo-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   min-width: 0;
 }
 
 .justica-submenu__icone-item {
-  width: 0.8rem;
-  height: 0.8rem;
-  min-width: 0.8rem;
-  color: var(--root-menuitem-text-color, #657380);
-  stroke-width: 2.25;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  min-width: 1rem;
+  color: currentColor;
+  font-size: 0.9375rem;
+  line-height: 1;
 }
 
-.justica-submenu__botao > svg:last-child {
-  width: 0.8rem;
-  height: 0.8rem;
-  stroke-width: 2.25;
+.justica-submenu__seta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.85rem;
+  min-width: 0.85rem;
   margin-left: 0.35rem;
+  color: currentColor;
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
 .justica-submenu__subpainel {

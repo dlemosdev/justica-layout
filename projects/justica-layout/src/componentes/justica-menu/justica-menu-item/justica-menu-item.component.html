@@ -13,7 +13,7 @@
     (click)="emitirAcao()"
     (mouseenter)="emitirApontamento()">
     @if (item().icone) {
-      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+      <i [attr.class]="'justica-menu-item__icone ' + item().icone" aria-hidden="true"></i>
     }
     <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
     @if (possuiFilhos()) {
@@ -37,7 +37,7 @@
     (click)="emitirAcao()"
     (mouseenter)="emitirApontamento()">
     @if (item().icone) {
-      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+      <i [attr.class]="'justica-menu-item__icone ' + item().icone" aria-hidden="true"></i>
     }
     <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
     @if (possuiFilhos()) {
@@ -59,7 +59,7 @@
     (click)="emitirAcao()"
     (mouseenter)="emitirApontamento()">
     @if (item().icone) {
-      <fa-icon class="justica-menu-item__icone" [icon]="item().icone!" aria-hidden="true"></fa-icon>
+      <i [attr.class]="'justica-menu-item__icone ' + item().icone" aria-hidden="true"></i>
     }
     <span class="justica-menu-item__rotulo">{{ item().rotulo }}</span>
     @if (possuiFilhos()) {

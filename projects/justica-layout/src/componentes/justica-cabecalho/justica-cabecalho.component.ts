@@ -8,20 +8,11 @@
   output,
   signal,
 } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {
-  faBell,
-  faChevronRight,
-  faRightFromBracket,
-  faTriangleExclamation,
-} from '@fortawesome/fontawesome-pro';
-
 import { LOGO_BASE64 } from '../../shared/constants/imagens-layout';
 
 @Component({
   selector: 'justica-cabecalho',
   standalone: true,
-  imports: [FontAwesomeModule],
   templateUrl: './justica-cabecalho.component.html',
   styleUrl: './justica-cabecalho.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -47,10 +38,6 @@ export class CabecalhoJusticaComponent {
   readonly dataHoraAtual = signal(this.formatarDataHoraAtual());
   readonly relogioCabecalho = computed(() => `Em Brasilia: ${this.dataHoraAtual()}`);
   readonly logo = computed(() => `data:image/png;base64,${LOGO_BASE64.trim()}`);
-  readonly iconeAlternarMenu = faChevronRight;
-  readonly iconeNotificacoes = faBell;
-  readonly iconeAlertas = faTriangleExclamation;
-  readonly iconeSair = faRightFromBracket;
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {

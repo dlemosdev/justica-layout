@@ -7,7 +7,7 @@
     "start:dev": "node ./scripts/dev-demo.mjs",
     "serve:demonstracao": "ng serve justica-demonstracao",
     "build": "npm run build:lib",
-    "build:lib": "ng build justica-layout",
+    "build:lib": "ng build justica-layout && node ./scripts/build-lib-styles.mjs",
     "watch:justica-layout": "ng build justica-layout --watch --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -27,7 +27,8 @@
     "@fortawesome/fontawesome-pro": "^7.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zone.js": "^0.14.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.17",

@@ -1,14 +1,13 @@
 ﻿import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MenuItemJustica } from '../../../core/modelos/menu-item.model';
 
 @Component({
   selector: 'justica-menu-item',
   standalone: true,
-  imports: [CommonModule, RouterLink, FontAwesomeModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './justica-menu-item.component.html',
   styleUrl: './justica-menu-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

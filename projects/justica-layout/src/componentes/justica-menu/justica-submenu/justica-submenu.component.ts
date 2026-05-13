@@ -1,4 +1,4 @@
-﻿import { CommonModule } from '@angular/common';
+﻿import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,9 +8,6 @@ import {
   output,
   signal,
 } from '@angular/core';
-import { NgTemplateOutlet } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChevronRight } from '@fortawesome/fontawesome-pro';
 
 import { MenuItemJustica } from '../../../core/modelos/menu-item.model';
 import { CliqueForaDirective } from '../../../shared/diretivas/clique-fora.directive';
@@ -18,13 +15,12 @@ import { CliqueForaDirective } from '../../../shared/diretivas/clique-fora.direc
 @Component({
   selector: 'justica-submenu',
   standalone: true,
-  imports: [CommonModule, NgTemplateOutlet, CliqueForaDirective, FontAwesomeModule],
+  imports: [CommonModule, NgTemplateOutlet, CliqueForaDirective],
   templateUrl: './justica-submenu.component.html',
   styleUrl: './justica-submenu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubmenuJusticaComponent {
-  readonly iconeSubmenu = faChevronRight;
   readonly itens = input<readonly MenuItemJustica[]>([]);
   readonly nivel = input(0);
 

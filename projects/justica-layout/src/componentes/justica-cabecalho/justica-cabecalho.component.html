@@ -10,7 +10,7 @@
       [class.justica-cabecalho__botao-menu--aberto]="barraLateralAberta()"
       aria-label="Alternar barra lateral"
       (click)="emitirAlternanciaBarraLateral()">
-      <fa-icon class="justica-cabecalho__icone-seta" [icon]="iconeAlternarMenu" aria-hidden="true"></fa-icon>
+      <i class="justica-cabecalho__icone-seta fa-solid fa-chevron-right" aria-hidden="true"></i>
     </button>
   </div>
 
@@ -32,21 +32,21 @@
         class="justica-cabecalho__botao-acao"
         aria-label="Notificacoes"
         (click)="emitirAcaoCabecalho('notificacoes')">
-        <fa-icon [icon]="iconeNotificacoes" aria-hidden="true"></fa-icon>
+        <i class="fa-solid fa-bell" aria-hidden="true"></i>
       </button>
       <button
         type="button"
         class="justica-cabecalho__botao-acao"
         aria-label="Alertas"
         (click)="emitirAcaoCabecalho('alertas')">
-        <fa-icon [icon]="iconeAlertas" aria-hidden="true"></fa-icon>
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
       </button>
       <button
         type="button"
         class="justica-cabecalho__botao-acao"
         aria-label="Sair"
         (click)="emitirAcaoCabecalho('sair')">
-        <fa-icon [icon]="iconeSair" aria-hidden="true"></fa-icon>
+        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
       </button>
     </div>
   </div>

@@ -1,9 +1,7 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-
 export interface MenuItemJustica {
   id: string;
   rotulo: string;
-  icone?: IconDefinition;
+  icone?: string;
   rota?: string;
   urlExterna?: string;
   desabilitado?: boolean;

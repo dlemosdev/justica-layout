@@ -1,29 +1,15 @@
 ﻿import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {
-  faBookOpen,
-  faCircleQuestion,
-  faFilePen,
-  faFileLines,
-  faGear,
-  faGaugeHigh,
-  faMagnifyingGlass,
-  faShieldHalved,
-  faUsers,
-} from '@fortawesome/fontawesome-pro';
 import { UsuarioJustica, MenuItemJustica, JusticaLayoutComponent } from 'justica-layout';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, JusticaLayoutComponent, FontAwesomeModule],
+  imports: [RouterOutlet, JusticaLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  readonly iconeAcessoRapido = faMagnifyingGlass;
-
   readonly usuario: UsuarioJustica = {
     nome: 'Maria Clara Nunes',
     local: 'Treina06',
@@ -34,36 +20,36 @@ export class AppComponent {
     {
       id: 'escaninho',
       rotulo: 'Escaninho',
-      icone: faGaugeHigh,
+      icone: 'fa-regular fa-gauge-high',
       rota: '/painel',
     },
     {
       id: 'chancela',
       rotulo: 'Chancela',
-      icone: faFilePen,
+      icone: 'fa-regular fa-file-pen',
       rota: '/processos',
     },
     {
       id: 'documentos',
       rotulo: 'Documentos',
-      icone: faFileLines,
+      icone: 'fa-regular fa-file-lines',
       rota: '/relatorios',
     },
     {
       id: 'gestao',
       rotulo: 'Gestao',
-      icone: faGear,
+      icone: 'fa-regular fa-gear',
       filhos: [
         {
           id: 'usuarios',
           rotulo: 'Usuarios',
-          icone: faUsers,
+          icone: 'fa-regular fa-users',
           acao: () => this.registrarAcao('Usuarios'),
         },
         {
           id: 'perfis',
           rotulo: 'Perfis de acesso',
-          icone: faShieldHalved,
+          icone: 'fa-regular fa-shield-halved',
           acao: () => this.registrarAcao('Perfis de acesso'),
         },
       ],
@@ -71,13 +57,13 @@ export class AppComponent {
     {
       id: 'biblioteca',
       rotulo: 'Biblioteca',
-      icone: faBookOpen,
+      icone: 'fa-regular fa-book-open',
       urlExterna: 'https://angular.dev',
     },
     {
       id: 'ajuda',
       rotulo: 'Ajuda',
-      icone: faCircleQuestion,
+      icone: 'fa-regular fa-circle-question',
       acao: () => this.registrarAcao('Ajuda'),
     },
   ];

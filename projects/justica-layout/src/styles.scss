@@ -1,0 +1,86 @@
+@use './shared/estilos';
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background: #fafafa;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  color: #212529;
+}
+
+* {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+
+.acoes-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.acoes-topo__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+  }
+
+  :where(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+    stroke-width: 2.25;
+  }
+}
+
+@media (max-width: 900px) {
+  .acoes-topo {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
