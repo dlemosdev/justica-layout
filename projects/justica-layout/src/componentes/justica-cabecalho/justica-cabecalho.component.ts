@@ -14,7 +14,7 @@ import {
   faChevronRight,
   faRightFromBracket,
   faTriangleExclamation,
-} from '@fortawesome/pro-solid-svg-icons';
+} from '@fortawesome/fontawesome-pro';
 
 import { LOGO_BASE64 } from '../../shared/constants/imagens-layout';
 
@@ -73,4 +73,5 @@ export class CabecalhoJusticaComponent {
     return CabecalhoJusticaComponent.FORMATADOR_RELOGIO.format(new Date()).replace(',', '');
   }
 }
+
 

@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChevronRight } from '@fortawesome/pro-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/fontawesome-pro';
 
 import { MenuItemJustica } from '../../../core/modelos/menu-item.model';
 import { CliqueForaDirective } from '../../../shared/diretivas/clique-fora.directive';
@@ -79,4 +79,5 @@ export class SubmenuJusticaComponent {
     this.fechar.emit();
   }
 }
+
 

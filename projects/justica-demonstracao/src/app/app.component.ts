@@ -11,7 +11,7 @@ import {
   faMagnifyingGlass,
   faShieldHalved,
   faUsers,
-} from '@fortawesome/pro-solid-svg-icons';
+} from '@fortawesome/fontawesome-pro';
 import { UsuarioJustica, MenuItemJustica, JusticaLayoutComponent } from 'justica-layout';
 
 @Component({
@@ -88,4 +88,5 @@ export class AppComponent {
     this.mensagemAcao = `Acao de demonstracao executada em: ${contexto}.`;
   }
 }
+
 
